@@ -12,6 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Supplier {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long supplierId;
@@ -20,6 +21,7 @@ public class Supplier {
     private String location;
     private Double rating;
 
-    @OneToMany(mappedBy = "supplier")
-    private List<SupplierProduct> products;
+    @OneToMany(mappedBy = "supplier", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<SupplierProduct> supplierProducts;  // Supplier can have many products
+
 }

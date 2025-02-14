@@ -12,12 +12,14 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long productId;
-    private Integer stock;
-    private Integer deliveryTime; // Delivery time in days
 
-    @OneToMany(mappedBy = "product")
-    private List<SupplierProduct> supplierProduct;
+    private String productName;
+    private Double price;
+    private Integer stock;
+    private Integer deliveryTime;
+
 }

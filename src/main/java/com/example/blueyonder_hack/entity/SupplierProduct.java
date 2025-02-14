@@ -20,17 +20,14 @@ public class SupplierProduct {
 
     @ManyToOne
     @JoinColumn(name = "supplier_id")
-    private Supplier supplier;  // Many SupplierProduct entities can belong to one Supplier
-
-    private Double price;   // Price at which the supplier provides the product
-
-    private int stock;
-
-    private int estimatedDeliveryDays;
+    private Supplier supplier;  // Supplier of the product
 
     @ManyToOne
     @JoinColumn(name = "product_id")
-    private Product product;  // Many SupplierProduct entities can belong to one Product
+    private Product product;  // Product supplied by the supplier
 
+    private Double price;
+    private Integer stock;
+    private Integer deliveryTime;
 
 }
